@@ -7,7 +7,7 @@ export const pushToServer = async () => {
   const config = await resolveConfig()
 
   const payload: CreateSchemaOperationRequest = {
-    projectId: 'abonnemania',
+    projectId: 'whitening',
     createSchemaRequest: {
       commitMessage: 'Generated from CLI',
       contentTypesRaw: config.contentTypes,
@@ -16,9 +16,9 @@ export const pushToServer = async () => {
 
   logger.info('Uploading to KIQR.CLOUD..')
 
-  await schemasApi.createSchema(payload).catch(async (error) => {
-    const response = await error.response.json()
-    console.log('error', response)
+  await schemasApi.createSchema(payload).catch((error) => {
+    console.log(error)
+    process.exit(1)
   })
 
   logger.info('Upload succeded!')
