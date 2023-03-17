@@ -9,5 +9,7 @@ export const pushCommand = new Command()
   )
   .action(async () => {
     await ensureValidToken()
-    pushToServer()
+
+    const projectId = 'whitening'
+    pushToServer(projectId)
   })

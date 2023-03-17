@@ -1,7 +1,6 @@
 import fs from 'fs'
 import fse from 'fs-extra'
 import path from 'path'
-import { logger } from '~lib/logger.js'
 
 const { copySync } = fse
 
@@ -20,7 +19,10 @@ export const copyKiqrFilesTemplate = (
     )
   }
 
-  const templateRootDir = path.join(path.dirname(process.argv[1]), '../templates/projectfiles')
+  const templateRootDir = path.join(
+    path.dirname(process.argv[1]),
+    '../templates/projectfiles'
+  )
   const sharedTemplateFilesPath = path.resolve(templateRootDir, '_shared')
   const templateDirPath = path.resolve(templateRootDir, templateName)
 
