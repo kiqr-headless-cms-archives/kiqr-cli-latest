@@ -9,8 +9,8 @@ module.exports = {
   apiVersion: 1,
   kind: 'project',
   contentTypes: {
-    ...require('./kiqr/schemas/posts.js'),
-    ...require('./kiqr/schemas/pages.js'),
+    posts: require('./kiqr/schemas/posts.js'),
+    pages: require('./kiqr/schemas/pages.js'),
   },
   relations: [],
 }
