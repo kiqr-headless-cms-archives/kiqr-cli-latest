@@ -1,0 +1,49 @@
+{
+  "name": "@kiqr/cli",
+  "version": "0.0.0",
+  "bin": {
+    "kiqr": "dist/index.js"
+  },
+  "type": "module",
+  "exports": "./dist/index.js",
+  "engine": {
+    "node": ">=14.16"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "jest",
+    "lint": "eslint src/**/*.ts",
+    "check-types": "tsc --noEmit"
+  },
+  "author": "kjellberg",
+  "license": "MIT",
+  "dependencies": {
+    "@kiqr/core-api": "^0.14.0",
+    "client-oauth2": "^4.3.3",
+    "commander": "^10.0.0",
+    "configstore": "^6.0.0",
+    "express": "^4.18.2",
+    "findup-sync": "^5.0.0",
+    "fs-extra": "^11.1.0",
+    "inquirer": "^9.1.4",
+    "node-fetch": "^3.3.0",
+    "open": "^8.4.2",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^18.14.0",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-10x": "^1.5.2",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.4",
+    "prettier-plugin-organize-imports": "^3.2.2",
+    "shx": "^0.3.4",
+    "tsup": "^6.6.3",
+    "typescript": "^4.9.5"
+  }
+}

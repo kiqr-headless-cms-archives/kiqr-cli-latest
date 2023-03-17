@@ -1,0 +1,8 @@
+# misc
+.DS_Store
+
+# log & tmp files
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
