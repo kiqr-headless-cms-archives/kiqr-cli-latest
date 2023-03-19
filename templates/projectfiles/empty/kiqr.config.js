@@ -8,6 +8,7 @@
 module.exports = {
   apiVersion: 1,
   kind: 'project',
+  projectId: process.env.KIQR_PROJECT_ID,
   contentTypes: {},
   relations: [],
 }

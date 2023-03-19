@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+import * as dotenv from 'dotenv'
+dotenv.config()
+
 import fetch, { Headers, Request, Response } from 'node-fetch'
 import application from './application.js'
 

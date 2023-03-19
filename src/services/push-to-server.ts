@@ -16,9 +16,12 @@ export const pushToServer = async (projectId: string) => {
 
   logger.info('Uploading to KIQR.CLOUD..')
 
-  await schemasApi.createSchema(payload).catch((error) => {
+  await schemasApi.createSchema(payload).catch(async (error) => {
     if (error.response.status === 404) {
       logger.error('Invalid projectId: %s', projectId)
+    } else if (error.response.status === 422) {
+      const response = await error.response.json()
+      response?.errors.forEach((error: string) => logger.error(error))
     } else {
       console.log(error)
     }
