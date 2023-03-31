@@ -8,7 +8,10 @@ export const globalConfigDefaults: KiqrGlobalConfig = {
   refreshToken: null,
 }
 
+const configFileName =
+  process.env.KIQR_DEV !== undefined ? 'kiqr-dev-config' : 'kiqr-global-config'
+
 export const globalConfig = new Configstore(
-  'kiqr-global-config',
+  configFileName,
   globalConfigDefaults
 )
